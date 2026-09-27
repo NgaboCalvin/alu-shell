@@ -1,0 +1,2 @@
+#!/bin/bash
+awk $'function to_dec(str,dig,   base,i,c,pos,result){\nbase=length(dig)\nresult=0\nfor(i=1;i<=length(str);i++){\nc=substr(str,i,1)\npos=index(dig,c)-1\nresult=result*base+pos\n}\nreturn result\n}\nfunction to_base(n,dig,   base,result,r){\nbase=length(dig)\nif(n==0){\nreturn substr(dig,1,1)\n}\nresult=""\nwhile(n>0){\nr=n%base\nresult=substr(dig,r+1,1) result\nn=int(n/base)\n}\nreturn result\n}\nBEGIN{\ntotal=to_dec(ENVIRON["WATER"],"water")+to_dec(ENVIRON["STIR"],"stir")\nprint to_base(total,"bestchol")\nexit\n}'
