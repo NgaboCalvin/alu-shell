@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays "To infinity and beyond" forever and refuses to die on SIGTERM
+trap 'echo "I am invincible!!!"' SIGTERM
+while true; do echo "To infinity and beyond"; sleep 2; done
